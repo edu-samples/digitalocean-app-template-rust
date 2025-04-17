@@ -6,7 +6,8 @@ spec:
       branch: master
       repo_clone_url: https://github.com/edu-samples/digitalocean-app-template-rust.git
     dockerfile_path: Dockerfile
-    run_command: target/release/sample-rust
+    # Use the installed binary (in PATH) instead of a path that doesn't exist in the runtime image
+    run_command: sample-rust
     envs:
       - key: PORT
         value: "8080"
