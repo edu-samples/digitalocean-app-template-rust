@@ -1,13 +1,14 @@
-name: sample-rust
-services:
-- name: web
-  git:
-    branch: master
-    repo_clone_url: https://github.com/edu-samples/digitalocean-app-template-rust.git
-  dockerfile_path: Dockerfile
-  build_command: cargo build --release
-  run_command: target/release/sample-rust
-  envs:
-    - key: PORT
-      value: "8080"
-  http_port: 8080
+spec:
+  name: sample-rust
+  services:
+  - name: web
+    git:
+      branch: master
+      repo_clone_url: https://github.com/edu-samples/digitalocean-app-template-rust.git
+    dockerfile_path: Dockerfile
+    build_command: cargo build --release
+    run_command: target/release/sample-rust
+    envs:
+      - key: PORT
+        value: "8080"
+    http_port: 8080
