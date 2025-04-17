@@ -1,12 +1,8 @@
 name: sample-rust
 services:
 - name: web
-  github:
-    repo: edu-samples/digitalocean-app-template-rust
-    branch: master
   dockerfile_path: Dockerfile
-  build_command: cargo build --release
-  run_command: ./target/release/sample-rust
+  run_command: sample-rust
   envs:
     - key: PORT
       value: "8080"
