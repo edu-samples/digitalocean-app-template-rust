@@ -1,6 +1,9 @@
-name: sample-golang
+name: sample-rust
 services:
 - name: web
-  github:
-    repo: digitalocean/sample-golang
-    branch: main
+  dockerfile_path: Dockerfile
+  run_command: sample-rust
+  envs:
+    - key: PORT
+      value: "8080"
+  http_port: 8080
